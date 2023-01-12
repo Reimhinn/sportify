@@ -1,0 +1,11 @@
+#header-title {
+    font-size: 48px;
+    margin-top: 0;
+}
+
+#title-name {
+    color: var(--primary);
+}
+#header-message {
+    margin-bottom: 77px;
+}

@@ -8,8 +8,9 @@
 #nav-x ul {
   margin: 0;
   padding: 0;
-  padding-left: 19px;
-  padding-right: 90px;
+  padding-left: 34px;
+  padding-top: 2px;
+  padding-right: 165px;
   color: white;
   font-size: 24px;
   list-style-type: none;
@@ -17,6 +18,8 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  z-index: 300;
+  position: relative;
 }
 
 #nav-x li  {
@@ -29,7 +32,7 @@
 }
 
 #nav-x img {
-  margin-right: 10px;
+  margin-right: -40px;
 }
 
 #logo-li {
