@@ -1,0 +1,12 @@
+#activity-card {
+  background-color: white;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+#activity-card:hover {
+  transform: scale(95%);
+}

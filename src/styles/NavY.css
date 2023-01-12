@@ -1,0 +1,28 @@
+#nav-y {
+  background-color: black;
+  height: 100vh;
+  width: 100px;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-y ul {
+  padding: 0;
+  margin-top: 36px;
+}
+
+#copyright {
+  align-self: end;
+  color: white;
+  display: flex;
+  position: fixed;
+  transform: rotate(270deg);
+  font-size: 12px;
+  width: 138px;
+  margin-bottom: 120px;
+}
