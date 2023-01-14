@@ -1,0 +1,10 @@
+#session-time-h2 {
+    position: absolute;
+    color: white;
+    opacity: 0.3;
+    font-size: 1vw;
+    width: 12vw;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    line-height: 3vh;
+}

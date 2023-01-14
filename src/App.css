@@ -31,6 +31,7 @@ main {
 .bottom-cards {
   width: calc(100% / 3);
   background-color: var(--secondary);
+  height: 100%;
   margin-right: 30px;
   border-radius: 5px;
 }
@@ -43,11 +44,11 @@ main {
   background-color: #282D30;
 }
 
-.bottom-cards:after {
+/* .bottom-cards:after {
   content: "";
   display: block;
   padding-bottom: 100%;
-}
+} */
 
 .bottom-cards:nth-child(3) {
   margin-right: 0;
@@ -82,6 +83,4 @@ main {
   .macro-cards {
     height: 24vh;
   }
-
-
 }

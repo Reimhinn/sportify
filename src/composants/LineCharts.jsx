@@ -1,74 +1,71 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import '../styles/LineCharts.css'
 
 const data = [
   {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: 'L',
+    value: 90,
   },
   {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: 'M',
+    value: 50,
   },
   {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: 'M',
+    value: 75,
   },
   {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: 'J',
+    value: 70,
   },
   {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    name: 'V',
+    value: 68,
   },
   {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    name: 'S',
+    value: 86,
   },
   {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    name: 'D',
+    value: 52,
   },
 ];
+
+const gradientId = 'gradient';
+const gradientUrl = `url(#${gradientId})`;
 
 
 function LineCharts() {
   return (
+    
     <div className='bottom-cards'>
-      <ResponsiveContainer width="100%" height={1}>
+
+      <h2 id='session-time-h2'>Durée moyenne des sessions</h2>
+
+      <ResponsiveContainer width="100%" aspect={1}>
+
         <LineChart
           width={500}
           height={300}
           data={data}
           margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            top: 100,
+            right: 0,
+            left: 0,
+            bottom: 20,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
+          <defs>
+      <linearGradient id={gradientId} x1="0" y1="1" x2="0" y2="0" gradientTransform="rotate(270)">
+        <stop offset="1.19%" stopColor="#FFFFFF" stopOpacity={1} />
+        <stop offset="81.27%" stopColor="rgba(255, 255, 255, 0.403191)" stopOpacity={1} />
+      </linearGradient>
+    </defs>
+          <XAxis dataKey="name" tickLine={false} axisLine={false} padding={{ left: 30, right: 30 }} stroke="white" opacity={0.5} />
           <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+            <Line type="natural" dataKey="value" stroke={gradientUrl} dot={false} activeDot={{ stroke: 'white', strokeWidth: 2 }}/>
         </LineChart>
       </ResponsiveContainer>
     </div>

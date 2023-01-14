@@ -85,7 +85,7 @@ export function BarsCharts() {
         <XAxis dataKey="name" tickMargin={22} tickSize={0} tick={{ fill:'#9B9EAC' }} width={100} />
         <YAxis yAxisId="left" orientation='left' hide />
         <YAxis yAxisId="right" orientation='right' domain={['dataMin - 1', 'dataMax + 1']} tickCount={3} tickLine={false} tickMargin="40" axisLine={false} tick={{ fill:'#9B9EAC' }}  />
-        <Tooltip content={<CustomTooltip />} offset={80} />
+        <Tooltip content={<CustomTooltip />} offset={80} wrapperStyle={{ outline: 'none' }} />
   
         <Bar dataKey="Poids" fill="black" yAxisId="right" barSize={10} radius={[5, 5, 0, 0]} />
         <Bar dataKey="Calories" fill="red" yAxisId="left"  barSize={10} radius={[5, 5, 0, 0]} /> 
