@@ -8,22 +8,39 @@ body {
 }
  
 #wrapper {
-  margin: 50px 90px 88px 224px;
+  padding: 50px 90px 88px 224px;
 }
 
 main {
   display: flex;
+  column-gap: 30px;
 }
 
 #left-side {
-  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+#right-side {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
 }
 
 .bottom-cards {
   width: calc(100% / 3);
-  background-color: green;
+  background-color: var(--secondary);
   margin-right: 30px;
   border-radius: 5px;
+}
+
+.bottom-cards:nth-child(1) {
+  background-color: var(--primary);
+}
+
+.bottom-cards:nth-child(2) {
+  background-color: #282D30;
 }
 
 .bottom-cards:after {
@@ -41,9 +58,30 @@ main {
 }
 
 .macro-cards {
-  background-color: red;
-  height: calc(100% / 4 - 30px);
+  background-color: var(--secondary);
+  /* height: calc(100% / 4 - 30px); */
   width: 20vw;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  display: flex;
   border-radius: 5px;
+  flex-direction: column;
+  flex-basis: 25%;
+}
+
+@media (max-width: 1500px) {
+  main {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  #right-side {
+    flex-direction: row;
+    column-gap: 40px;
+  }
+
+  .macro-cards {
+    height: 24vh;
+  }
+
+
 }

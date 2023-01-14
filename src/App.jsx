@@ -3,7 +3,7 @@ import './App.css'
 import NavX from './composants/NavX'
 import NavY from './composants/NavY'
 import Header from './composants/Header'
-import BarsCharts from './composants/BarsCharts'
+import BarsChartsContainer from './composants/BarsChartsContainer'
 import LineCharts from './composants/LineCharts'
 import RadarCharts from './composants/RadarCharts'
 import GaugeCharts from './composants/GaugeCharts'
@@ -21,7 +21,7 @@ function App() {
         <Header />
         <main>
           <section id='left-side'>
-            <BarsCharts />
+            <BarsChartsContainer />
             <section id='bottom-graphs'>
               <LineCharts />
               <RadarCharts />

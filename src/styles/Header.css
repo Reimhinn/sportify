@@ -1,11 +1,12 @@
 #header-title {
     font-size: 48px;
     margin-top: 0;
+    margin-bottom: 3vh;
 }
 
 #title-name {
     color: var(--primary);
 }
 #header-message {
-    margin-bottom: 77px;
+    margin-bottom: 8vh;
 }
