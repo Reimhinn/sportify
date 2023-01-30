@@ -1,0 +1,30 @@
+.logo-block {
+    /* width: 4vw; */
+    /* opacity: 0.15; */
+    border-radius: 6px;
+    margin-right: 2vw;
+}
+
+/* .logo-block:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+} */
+
+.macro-data {
+    font-size: 1.7em;
+    margin-bottom: 0;
+}
+
+.macro-name {
+    color: #74798C;
+    font-size: 1em;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+}
+
+.macro-logo {
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+}

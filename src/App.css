@@ -60,13 +60,13 @@ main {
 
 .macro-cards {
   background-color: var(--secondary);
-  /* height: calc(100% / 4 - 30px); */
-  width: 20vw;
-  /* margin-bottom: 40px; */
+  width: 15vw;
+  padding-left: 3vw;
   display: flex;
   border-radius: 5px;
-  flex-direction: column;
   flex-basis: 25%;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 @media (max-width: 1500px) {
