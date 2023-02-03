@@ -22,12 +22,17 @@
   position: relative;
 }
 
-#nav-x li  {
+#nav-x a {
+  color: white;
+  text-decoration: none;
+}
+
+#nav-x a  {
   cursor: pointer;
   transition: 250ms all;
 }
 
-#nav-x li:hover {
+#nav-x a:hover {
   opacity: 0.7;
 }
 

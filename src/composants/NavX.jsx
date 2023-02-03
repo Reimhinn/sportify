@@ -1,16 +1,18 @@
 import React from 'react'
 import '../styles/NavX.css'
 import logo from '../assets/logo.svg'
+import {Link} from "react-router-dom"
 
 function NavX() {
   return (
     <nav id='nav-x'>
       <ul>
-        <li id='logo-li'><img src={logo} alt="" /></li>
-        <li>Accueil</li>
-        <li>Profil</li>
-        <li>Réglage</li>
-        <li>Communauté</li>
+        <Link id='logo-li' reloadDocument key='home' to={`/`}><img src={logo} alt="" /></Link>
+        <Link reloadDocument key='home1' to={`/`}>Accueil</Link>
+        <Link reloadDocument key='home2' to={`soon`}>Profil</Link>
+        <Link reloadDocument key='home3' to={`soon`}>Réglages</Link>
+        <Link reloadDocument key='home4' to={`soon`}>Communauté</Link>
+
       </ul>
     </nav>
   )
