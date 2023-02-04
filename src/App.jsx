@@ -9,9 +9,6 @@ import MaintenancePage from "./pages/MaintenancePage";
 
 function App() {
   
-
-
-
     return (
         <div id="App">
             <Router>

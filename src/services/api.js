@@ -5,13 +5,39 @@ import { API_URL } from "../config";
 const userPath = `${API_URL}/user/`
 
 function getUserInfos(id) {
-    // const [data, setData] = useState([])
     return fetch(`${userPath}${id}`, {
         method: "GET",
         headers: {
             Accept: "Application/json",
         },
-    }).then((res) => res.json());
+    }).then((res) => res.json())
+}
+
+function getUserActivity(id) {
+    return fetch(`${userPath}${id}/activity`, {
+        method: "GET",
+        headers: {
+            Accept: "Application/json",
+        },
+    }).then((res) => res.json())
+}
+
+function getUserSessions(id) {
+    return fetch(`${userPath}${id}/average-sessions`, {
+        method: "GET",
+        headers: {
+            Accept: "Application/json",
+        },
+    }).then((res) => res.json())
+}
+
+function getUserPerformance(id) {
+    return fetch(`${userPath}${id}/performance`, {
+        method: "GET",
+        headers: {
+            Accept: "Application/json",
+        },
+    }).then((res) => res.json())
 }
 
 // function getName() {
@@ -19,5 +45,5 @@ function getUserInfos(id) {
 // }
 
 export default {
-    getUserInfos,
+    getUserInfos, getUserActivity, getUserSessions, getUserPerformance,
 };

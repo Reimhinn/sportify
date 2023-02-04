@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     LineChart,
     Line,
@@ -8,42 +8,29 @@ import {
     ReferenceArea,
 } from "recharts";
 import "../styles/LineCharts.css";
+import { useParams } from "react-router-dom";
+import Api from "../services/api";
 
-const data = [
-    {
-        name: "L",
-        value: 90,
-    },
-    {
-        name: "M",
-        value: 50,
-    },
-    {
-        name: "M",
-        value: 75,
-    },
-    {
-        name: "J",
-        value: 70,
-    },
-    {
-        name: "V",
-        value: 68,
-    },
-    {
-        name: "S",
-        value: 86,
-    },
-    {
-        name: "D",
-        value: 52,
-    },
-];
 
 const gradientId = "gradient";
 const gradientUrl = `url(#${gradientId})`;
 
 function LineCharts() {
+
+    const [data, setData] = useState([])
+
+    let { id } = useParams();
+  
+    useEffect(() => {
+        fetchUserSessions();
+    }, []);
+  
+    const fetchUserSessions = async () => {
+        const dataFetched = await Api.getUserSessions(id);
+        setData(dataFetched);
+        console.log(dataFetched)
+    };
+
     return (
         <div className="bottom-cards">
             <h2 id="session-time-h2">Durée moyenne des sessions</h2>
@@ -52,7 +39,7 @@ function LineCharts() {
                 <LineChart
                     width={500}
                     height={300}
-                    data={data}
+                    data={data.data ? data.data.sessions : ""}
                 	margin={{
                         top: 100,
                         right: 0,
@@ -82,7 +69,7 @@ function LineCharts() {
                         </linearGradient>
                     </defs>
                     <XAxis
-                        dataKey="name"
+                        dataKey="day"
                         tickLine={false}
                         axisLine={false}
                         stroke="white"
@@ -93,7 +80,7 @@ function LineCharts() {
                     <Tooltip />
                     <Line
                         type="natural"
-                        dataKey="value"
+                        dataKey="sessionLength"
                         stroke={gradientUrl}
                         dot={false}
                         activeDot={{ stroke: "white", strokeWidth: 2 }}
