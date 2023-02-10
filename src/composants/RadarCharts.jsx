@@ -38,7 +38,7 @@ import Api from "../services/api";
 
 function RadarCharts() {
 
-  const [data, setData] = useState([])
+  const [datas, setDatas] = useState([])
 
   let { id } = useParams();
 
@@ -48,7 +48,7 @@ function RadarCharts() {
 
   const fetchUserPerformance = async () => {
       const dataFetched = await Api.getUserPerformance(id);
-      setData(dataFetched);
+      setDatas(dataFetched);
       console.log(dataFetched)
   };
 
@@ -56,12 +56,15 @@ function RadarCharts() {
   return (
     <div className='bottom-cards'>
       <ResponsiveContainer  width="100%" aspect={1}>
-        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data.data ? data.data : ""}  >
+        <RadarChart cx="50%" cy="50%" outerRadius="50%" innerRadius={50} data={datas.data ? datas.data.data : ""} >
           <PolarGrid axisLine={false} radialLines={false} stroke="white"
-        strokeWidth={1.5} polarRadius={[15, 30, 70, 100 ,150]} />
-          <PolarAngleAxis  dataKey="kind" tick={{ fill: "white", fontSize: 15}} />
+        strokeWidth={1.5} polarRadius={[10, 20, 50, 80 ,110]} />
+          <PolarAngleAxis  dataKey="kind" tickSize={40} tick={{ fill: "white", fontSize: 15 }} tickFormatter={(value) => {
+                            const kinds = ["Cardio", "Energie", "Endurance", "Force", "Vitesse", "Intensité"];
+                            return kinds[value-1];
+                          }} />
           <PolarRadiusAxis  tickCount={6} tick={false} axisLine={false} />
-          <Radar dataKey="data"
+          <Radar dataKey="value"
            fill="var(--primary)" fillOpacity={0.6} />
         </RadarChart>
       </ResponsiveContainer>

@@ -4,9 +4,7 @@ import '../styles/GaugeCharts.css'
 
 const data = [
   {
-    name: '50+',
-    uv: 0.1,
-    pv: 1000,
+    uv: 20,
   },
 ];
 
@@ -21,7 +19,7 @@ function GaugeCharts() {
   return (
     <div className='bottom-cards'>
       <ResponsiveContainer width="100%" aspect={1}>
-        <RadialBarChart cx="50%" cy="50%" innerRadius="1000%" outerRadius="80%" barSize={10} data={data}>
+        <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="60%" barSize={10} data={data}>
           <RadialBar
             fill='var(--primary)'
             minAngle={15}

@@ -5,7 +5,7 @@ import LineCharts from "../composants/LineCharts";
 import RadarCharts from "../composants/RadarCharts";
 import GaugeCharts from "../composants/GaugeCharts";
 import MacroCards from "../composants/MacroCards";
-
+import PieCharts from '../composants/PieCharts';
 
 function MainPage() {
 
@@ -24,7 +24,7 @@ function MainPage() {
                         <section id="bottom-graphs">
                             <LineCharts />
                             <RadarCharts />
-                            <GaugeCharts />
+                            <PieCharts />
                         </section>
                     </section>
                     <section id="right-side">

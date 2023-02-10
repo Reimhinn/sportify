@@ -6,6 +6,7 @@ import {
     Tooltip,
     ResponsiveContainer,
     ReferenceArea,
+    YAxis,
 } from "recharts";
 import "../styles/LineCharts.css";
 import { useParams } from "react-router-dom";
@@ -31,6 +32,16 @@ function LineCharts() {
         console.log(dataFetched)
     };
 
+    const CustomTooltip = ({ active, payload }) => {
+        if (active && payload && payload.length) {
+          return (
+            <div className="custom-tooltip" id="line-tooltip">
+              <p id="tooltip-day">{`${payload[0].value} min`}</p>
+            </div>
+          );
+        }
+      }
+
     return (
         <div className="bottom-cards">
             <h2 id="session-time-h2">Durée moyenne des sessions</h2>
@@ -41,7 +52,7 @@ function LineCharts() {
                     height={300}
                     data={data.data ? data.data.sessions : ""}
                 	margin={{
-                        top: 100,
+                        top: 140,
                         right: 0,
                         left: 0,
                         bottom: 20,
@@ -64,7 +75,7 @@ function LineCharts() {
                             <stop
                                 offset="81.27%"
                                 stopColor="rgba(255, 255, 255, 0.403191)"
-                                stopOpacity={1}
+                                stopOpacity={0.7}
                             />
                         </linearGradient>
                     </defs>
@@ -75,16 +86,22 @@ function LineCharts() {
                         stroke="white"
                         opacity={0.5}
                         interval="preserveStartEnd"
-                        padding={{ left: 20, right: 20 }}
+                        // padding={{ left: 20, right: 20 }}
+                        tickFormatter={(value) => {
+                            const days = ["L", "M", "M", "J", "V", "S", "D"];
+                            return days[value-1];
+                          }}
                     />
-                    <Tooltip />
                     <Line
                         type="natural"
                         dataKey="sessionLength"
                         stroke={gradientUrl}
+                        strokeWidth= {3}
                         dot={false}
-                        activeDot={{ stroke: "white", strokeWidth: 2 }}
+                        activeDot={{ stroke: "white", strokeWidth: 6 }}
                     />
+                    <YAxis hide padding={{ bottom: 35 }} />
+                    <Tooltip content={<CustomTooltip />} offset={20}  wrapperStyle={{ outline: 'none', }} />
                     <ReferenceArea x1="60" x2="80" strokeOpacity={0.3} />
                 </LineChart>
             </ResponsiveContainer>

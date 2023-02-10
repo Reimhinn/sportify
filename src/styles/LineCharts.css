@@ -1,10 +1,24 @@
 #session-time-h2 {
     position: absolute;
     color: white;
-    opacity: 0.3;
-    font-size: 1vw;
+    opacity: 0.6;
+    font-size: 1.2vw;
     width: 12vw;
-    padding-left: 2vw;
-    padding-top: 2vh;
-    line-height: 3vh;
+    padding-left: 3vw;
+    padding-top: 4vh;
+    line-height: 4vh;
+    font-weight: lighter;
 }
+
+#line-tooltip {
+    background-color: white;
+    color: black;
+    width: 4vw;
+    height: 5vh;
+    margin-bottom: 200px;
+    padding: 0;
+}
+
+.x-axis {
+    transform: scaleX(2);
+  }

@@ -24,7 +24,7 @@ export function BarsCharts() {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div id="custom-tooltip">
+        <div className="custom-tooltip">
           <p id="tooltip-kg">{`${payload[0].value}kg`}</p>
           <p id="tooltip-kCal">{`${payload[1].value}kCal`}</p>
         </div>
